@@ -58,12 +58,20 @@ int main(void)
 t_log* iniciar_logger(void)
 {
 	t_log* nuevo_logger = log_create("tp0.log", "LOGS Cliente", true, LOG_LEVEL_INFO);
+	if (nuevo_logger == NULL){
+		perror("No se pudo crear el archivo LOG");
+		exit(EXIT_FAILURE);
+	}
 	return nuevo_logger;
 }
 
 t_config* iniciar_config(void)
 {
-	t_config* nuevo_config = config_create("cliente.config");;
+	t_config* nuevo_config = config_create("cliente.config");
+	if(nuevo_config == NULL){
+		perror("No se pudo obtener el archivo CONFIG");
+		exit(EXIT_FAILURE);
+	}
 	return nuevo_config;
 }
 
