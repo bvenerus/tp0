@@ -30,7 +30,7 @@ int main(void)
 	valor = config_get_string_value(config, "CLAVE");		
 
 	// Loggeamos el valor de config
-	log_info(logger, valor);
+	log_info(logger, "Dato VALOR del config.cliente: %s", valor);
 
 	/* ---------------- LEER DE CONSOLA ---------------- */
 
@@ -89,7 +89,7 @@ void leer_consola(t_log* logger)
 			break;
 		}
 
-		log_info(logger, leido);
+		log_info(logger, "String leido desde CONSOLA: %s", leido);
 		// ¡No te olvides de liberar las lineas antes de regresar!
 		free(leido);
 	}
