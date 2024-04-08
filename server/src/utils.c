@@ -21,7 +21,7 @@ int iniciar_servidor(void)
 	// Creamos el socket de escucha del servidor
 	socket_servidor = socket(servinfo->ai_family,
 							 servinfo->ai_socktype,
-							 servinfo->ai_socktype);
+							 servinfo->ai_protocol);
 
 	// Asociamos el socket a un puerto
 	bind(socket_servidor, servinfo->ai_addr, servinfo->ai_addrlen);
